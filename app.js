@@ -39,4 +39,9 @@ function addgamepad(gamepad){
         a.appendChild(e);
       }
 
+    d.appendChild(a);
+    document.getElementById("start").style.display = "none";
+    document.body.appendChild(d);
+    rAF(updateStatus);
+
 }
