@@ -55,3 +55,18 @@ function removegamepad(gamepad) {
     document.body.removeChild(d);
     delete controllers[gamepad.index];
 }
+
+
+
+function scangamepads() {
+    var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
+    for (var i = 0; i < gamepads.length; i++) {
+      if (gamepads[i]) {
+        if (!(gamepads[i].index in controllers)) {
+          addgamepad(gamepads[i]);
+        } else {
+          controllers[gamepads[i].index] = gamepads[i];
+        }
+      }
+    }
+  }
