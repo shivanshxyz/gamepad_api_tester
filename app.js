@@ -5,3 +5,7 @@ var rAF = window.mozRequestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.requestAnimationFrame;
 
+function connecthandler(e) {
+    addgamepad(e.gamepad);
+}
+
