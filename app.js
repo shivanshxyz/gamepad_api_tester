@@ -32,7 +32,6 @@ function addgamepad(gamepad){
     for (i=0; i<gamepad.axes.length; i++) {
         e = document.createElement("meter");
         e.className = "axis";
-        e.id = "a" + i;
         e.setAttribute("min", "-1");
         e.setAttribute("max", "1");
         e.setAttribute("value", "0");
