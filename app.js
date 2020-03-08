@@ -56,7 +56,14 @@ function removegamepad(gamepad) {
     delete controllers[gamepad.index];
 }
 
-
+function updateStatus() {
+    scangamepads();
+    for(j in controllers) {
+        var controller = controllers[j];
+        var d = document.getElementById("controller" + j);
+        var buttons = d.getElementsByClassName("button");
+    }
+}
 
 function scangamepads() {
     var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);
